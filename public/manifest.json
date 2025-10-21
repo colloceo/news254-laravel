@@ -1,0 +1,29 @@
+{
+  "name": "News254 - Kenya's Premier News Platform",
+  "short_name": "News254",
+  "description": "Stay informed with News254 - Kenya's leading source for politics, business, technology, sports, and entertainment news.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#16A34A",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "https://iili.io/FULcRiF.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "https://iili.io/FULcRiF.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["news", "magazines"],
+  "lang": "en-KE",
+  "dir": "ltr",
+  "scope": "/",
+  "prefer_related_applications": false
+}

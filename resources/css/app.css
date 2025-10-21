@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Critical CSS for Core Web Vitals optimization */
+@layer base {
+    html {
+        font-display: swap;
+        scroll-behavior: smooth;
+    }
+    
+    body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    /* Optimize CLS */
+    .article-image {
+        aspect-ratio: 16/9;
+        object-fit: cover;
+    }
+    
+    .card-image {
+        aspect-ratio: 4/3;
+        object-fit: cover;
+    }
+}
+
+/* Performance optimizations - Reduce layout shifts */
+@layer utilities {
+    /* Aspect ratio utilities for images */
+    .aspect-video {
+        aspect-ratio: 16 / 9;
+    }
+    
+    .aspect-square {
+        aspect-ratio: 1 / 1;
+    }
+    
+    .aspect-4-3 {
+        aspect-ratio: 4 / 3;
+    }
+    
+    .line-clamp-1 {
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .line-clamp-2 {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    .line-clamp-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    /* Loading skeleton animations */
+    .skeleton {
+        background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+        background-size: 200% 100%;
+        animation: loading 1.5s infinite;
+    }
+    
+    @keyframes loading {
+        0% {
+            background-position: 200% 0;
+        }
+        100% {
+            background-position: -200% 0;
+        }
+    }
+}
+
+/* Breaking news marquee animation */
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+    animation: marquee 20s linear infinite;
+    will-change: transform;
+    white-space: nowrap;
+    display: inline-block;
+    padding-right: 5rem;
+    min-width: unset;
+}
+
+/* Prose styles for article content */
+.prose {
+    color: #374151;
+    max-width: none;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4, .prose h5, .prose h6 {
+    color: #111827;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.prose h1 {
+    font-size: 2.25rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+.prose h2 {
+    font-size: 1.875rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.prose h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.prose p {
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.75;
+}
+
+.prose blockquote {
+    font-style: italic;
+    border-left: 4px solid #16a34a;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: #6b7280;
+}
+
+.prose ul, .prose ol {
+    margin: 1.25rem 0;
+    padding-left: 1.5rem;
+}
+
+.prose li {
+    margin: 0.5rem 0;
+}
+
+.prose a {
+    color: #16a34a;
+    text-decoration: underline;
+}
+
+.prose a:hover {
+    color: #15803d;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .animate-marquee {
+        animation: none;
+    }
+}
+
+/* Responsive ad adjustments */
+@media (max-width: 768px) {
+    .animate-marquee {
+        animation-duration: 40s !important;
+    }
+}
+
+/* Focus styles for accessibility */
+.focus-visible:focus {
+    outline: 2px solid #16a34a;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .text-gray-600 {
+        color: #000000;
+    }
+    
+    .text-gray-500 {
+        color: #333333;
+    }
+}
+
+/* Hide scrollbar for mobile navigation */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Dark mode improvements */
+@media (prefers-color-scheme: dark) {
+    .prose blockquote {
+        border-left-color: #16a34a;
+        color: #9ca3af;
+    }
+    
+    .prose a {
+        color: #22c55e;
+    }
+    
+    .prose a:hover {
+        color: #16a34a;
+    }
+}
+
+/* Mobile optimizations */
+@media (max-width: 640px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    .prose {
+        font-size: 14px;
+    }
+    
+    .prose h1 {
+        font-size: 1.5rem;
+    }
+    
+    .prose h2 {
+        font-size: 1.25rem;
+    }
+    
+    .prose h3 {
+        font-size: 1.125rem;
+    }
+}
