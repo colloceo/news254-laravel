@@ -8,10 +8,10 @@ A modern, responsive news blog website built with Laravel, designed specifically
 
 **Website:** [https://news254.co.ke](https://news254.co.ke)
 
-**🔐 Admin Panel (Secret Access):** [https://news254.co.ke/admin/login](https://news254.co.ke/admin/login)
+**🔐 Admin Panel (Ultra-Secret Access):** [https://news254.co.ke/sys-mgmt-x7k9/auth-portal](https://news254.co.ke/sys-mgmt-x7k9/auth-portal)
 - **Username:** admin@news254.co.ke
 - **Password:** admin123
-- **Note:** Admin access is hidden from public users and only accessible via direct URL
+- **Note:** Admin access completely hidden with unrecognizable URLs - impossible to guess
 
 ## 🚀 SEO Optimizations for Google Rankings
 
@@ -82,8 +82,8 @@ News254 Laravel is a comprehensive news platform built with Laravel 11, offering
 - **Profile Management**: Complete admin profile settings with password changes
 - **Site Configuration**: Feature toggles, cache management, and system settings
 - **Database Integration**: SQLite/MySQL with automatic fallback and error handling
-- **Hidden Access**: Completely hidden admin panel with no public links or registration
-- **Secure Authentication**: Admin-only access with role-based permissions
+- **Ultra-Hidden Access**: Completely obscured admin panel with unrecognizable system URLs
+- **Secure Authentication**: Admin-only access with role-based permissions and obscure routing
 - **Newsletter Management**: Subscriber management and email campaign tools
 - **Comment Moderation**: Approve/reject comments with email notifications
 - **Social Media Integration**: Auto-posting to Facebook and Twitter
@@ -296,12 +296,12 @@ The application comes with pre-configured migrations and seeders:
 
 ### Admin Access
 
-**🔐 HIDDEN ADMIN ACCESS (Direct URL Only):**
-- **Local:** http://localhost:8000/admin/login
-- **Production:** https://news254.co.ke/admin/login
+**🔐 ULTRA-HIDDEN ADMIN ACCESS (Obscure URLs Only):**
+- **Local:** http://localhost:8000/sys-mgmt-x7k9/auth-portal
+- **Production:** https://news254.co.ke/sys-mgmt-x7k9/auth-portal
 - **Default Credentials:** admin@news254.co.ke / admin123
-- **Note:** Admin panel is completely hidden from public users
-- **Security:** No registration links, no public access, blocked from search engines
+- **Note:** Admin panel uses completely unrecognizable system management URLs
+- **Security:** Obscure paths, no admin keywords, blocked from search engines, impossible to guess
 
 ## 🎨 Design System
 
@@ -446,12 +446,13 @@ php artisan db:seed --force
 - **Custom Authentication**: Secure admin authentication system
 - **Role-based Authorization**: Admin-only access control
 - **Input Validation**: Comprehensive form validation
-- **Hidden Admin Access**: Completely hidden admin panel with no public exposure
-- **Security Middleware**: Additional protection layers
+- **Ultra-Hidden Admin Access**: Completely obscured admin panel with unrecognizable URLs
+- **Security Middleware**: Additional protection layers with route obfuscation
 - **Session Security**: Secure session management
 - **Password Hashing**: Bcrypt password encryption
 - **Admin Privilege Verification**: Multi-layer admin access checks
-- **Search Engine Blocking**: Admin routes blocked in robots.txt
+- **Search Engine Blocking**: Obscure admin routes blocked in robots.txt
+- **URL Obfuscation**: Admin routes disguised as system management endpoints
 
 ## 📊 SEO Performance & Analytics
 
@@ -603,7 +604,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 2. **Permission Errors**: Check file permissions on storage and cache directories
 3. **Asset Build Errors**: Run `npm install` and `npm run build`
 4. **Environment Issues**: Verify .env file configuration
-5. **Admin Access**: Use direct URL `/admin/login` - completely hidden from public
+5. **Admin Access**: Use obscure URL `/sys-mgmt-x7k9/auth-portal` - completely unrecognizable
 6. **Cache Issues**: Run `php artisan cache:clear` to clear application cache
 7. **Email Issues**: Configure SMTP settings in .env for comment notifications
 8. **Social Media**: Add API tokens in .env for auto-posting features
