@@ -60,6 +60,12 @@
                         Sign in
                     </button>
                 </div>
+                
+                <div class="text-center">
+                    <a href="{{ route('admin.register') }}" class="text-green-400 hover:text-green-300 text-sm">
+                        Create Admin Account
+                    </a>
+                </div>
             </form>
         </div>
     </div>

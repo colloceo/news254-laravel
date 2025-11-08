@@ -22,42 +22,39 @@
 </div>
 @endif
 
-<div class="bg-white dark:bg-gray-800 rounded-lg shadow overflow-hidden">
-    <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-700">
-        <thead class="bg-gray-50 dark:bg-gray-700">
+<div class="bg-black rounded-lg shadow overflow-hidden">
+    <table class="min-w-full divide-y divide-gray-600">
+        <thead class="bg-black">
             <tr>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Name</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Slug</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Articles</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Color</th>
-                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">Actions</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Name</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Slug</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Articles</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Color</th>
+                <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">Actions</th>
             </tr>
         </thead>
-        <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700">
+        <tbody class="bg-black divide-y divide-gray-600">
             @foreach($categories as $category)
-            <tr>
+            <tr class="hover:bg-gray-800">
                 <td class="px-6 py-4 whitespace-nowrap">
                     <div class="flex items-center">
-                        @if($category->icon)
-                        <span class="mr-2">{{ $category->icon }}</span>
-                        @endif
-                        <span class="text-sm font-medium text-gray-900 dark:text-white">{{ $category->name }}</span>
+                        <span class="text-sm font-medium text-white">{{ $category->name }}</span>
                     </div>
                 </td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">{{ $category->slug }}</td>
-                <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500 dark:text-gray-300">{{ $category->articles_count }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-white">{{ $category->slug }}</td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm text-white">{{ $category->articles_count }}</td>
                 <td class="px-6 py-4 whitespace-nowrap">
                     <div class="flex items-center">
                         <div class="w-4 h-4 rounded" style="background-color: {{ $category->color }}"></div>
-                        <span class="ml-2 text-sm text-gray-500 dark:text-gray-300">{{ $category->color }}</span>
+                        <span class="ml-2 text-sm text-white">{{ $category->color }}</span>
                     </div>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium space-x-2">
-                    <a href="{{ route('admin.categories.edit', $category) }}" class="text-blue-600 hover:text-blue-900">Edit</a>
+                    <a href="{{ route('admin.categories.edit', $category) }}" class="text-blue-400 hover:text-blue-300">Edit</a>
                     <form action="{{ route('admin.categories.destroy', $category) }}" method="POST" class="inline" onsubmit="return confirm('Are you sure?')">
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="text-red-600 hover:text-red-900">Delete</button>
+                        <button type="submit" class="text-red-400 hover:text-red-300">Delete</button>
                     </form>
                 </td>
             </tr>

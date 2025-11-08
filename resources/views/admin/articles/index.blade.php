@@ -83,37 +83,37 @@
     </div>
 
     <!-- Desktop Table View -->
-    <div class="hidden lg:block bg-gray-800 rounded-lg border border-gray-700 overflow-hidden">
+    <div class="hidden lg:block bg-black rounded-lg border border-gray-600 overflow-hidden">
         <div class="overflow-x-auto">
             <table class="min-w-full divide-y divide-gray-600">
-                <thead class="bg-gray-700">
+                <thead class="bg-black">
                     <tr>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                        <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                             Article
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                        <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                             Category
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                        <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                             Author
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                        <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                             Status
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                        <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                             Views
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                        <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                             Date
                         </th>
-                        <th class="px-6 py-3 text-left text-xs font-medium text-gray-300 uppercase tracking-wider">
+                        <th class="px-6 py-3 text-left text-xs font-medium text-white uppercase tracking-wider">
                             Actions
                         </th>
                     </tr>
                 </thead>
-                <tbody class="bg-gray-800 divide-y divide-gray-600">
+                <tbody class="bg-black divide-y divide-gray-600">
                     @foreach($articles as $article)
-                    <tr class="hover:bg-gray-700">
+                    <tr class="hover:bg-gray-800">
                         <td class="px-6 py-4">
                             <div class="flex items-center">
                                 <img src="{{ $article->featured_image }}" 
@@ -160,7 +160,7 @@
                         <td class="px-6 py-4 whitespace-nowrap text-sm text-white">
                             {{ number_format($article->views) }}
                         </td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-400">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-white">
                             {{ $article->created_at->format('M j, Y') }}
                         </td>
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">

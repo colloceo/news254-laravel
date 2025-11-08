@@ -44,6 +44,7 @@ class ArticleController extends Controller
                   ->orWhere('excerpt', 'like', "%{$query}%");
             })
             ->with(['author', 'category'])
+            ->latest('published_at')
             ->paginate(12);
 
         return view('articles.search', compact('articles', 'query'));

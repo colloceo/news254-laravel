@@ -22,6 +22,7 @@ class Article extends Model
         'featured_image',
         'is_breaking',
         'is_featured',
+        'is_trending',
         'is_draft',
         'read_time',
         'views',
@@ -33,6 +34,7 @@ class Article extends Model
         'tags' => 'array',
         'is_breaking' => 'boolean',
         'is_featured' => 'boolean',
+        'is_trending' => 'boolean',
         'is_draft' => 'boolean',
         'published_at' => 'datetime'
     ];
@@ -75,6 +77,11 @@ class Article extends Model
     public function scopeFeatured($query)
     {
         return $query->where('is_featured', true);
+    }
+
+    public function scopeTrending($query)
+    {
+        return $query->where('is_trending', true);
     }
 
     public function scopeLanguage($query, $language = 'en')

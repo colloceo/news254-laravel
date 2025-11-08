@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\ContactInfo;
 use App\Services\CacheService;
 use Illuminate\Http\Request;
 
@@ -26,7 +27,8 @@ class HomeController extends Controller
 
     public function contact()
     {
-        return view('pages.contact');
+        $contactInfo = ContactInfo::getContactInfo();
+        return view('pages.contact', compact('contactInfo'));
     }
 
     public function privacy()

@@ -10,6 +10,7 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Trix Editor -->
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
@@ -365,6 +366,14 @@
                        class="text-gray-300 hover:text-green-400 font-medium {{ request()->routeIs('admin.comments.*') ? 'text-green-400' : '' }}">
                         Comments
                     </a>
+                    <a href="{{ route('admin.messages.index') }}" 
+                       class="text-gray-300 hover:text-green-400 font-medium {{ request()->routeIs('admin.messages.*') ? 'text-green-400' : '' }}">
+                        Messages
+                    </a>
+                    <a href="{{ route('admin.contact-info.index') }}" 
+                       class="text-gray-300 hover:text-green-400 font-medium {{ request()->routeIs('admin.contact-info.*') ? 'text-green-400' : '' }}">
+                        Contact Info
+                    </a>
                     <a href="{{ route('admin.analytics.index') }}" 
                        class="text-gray-300 hover:text-green-400 font-medium {{ request()->routeIs('admin.analytics.*') ? 'text-green-400' : '' }}">
                         Analytics
@@ -399,6 +408,14 @@
                 <a href="{{ route('admin.comments.index') }}" 
                    class="block px-3 py-2 text-gray-300 hover:text-green-400 hover:bg-gray-600 rounded-md font-medium {{ request()->routeIs('admin.comments.*') ? 'text-green-400 bg-gray-600' : '' }}">
                     Comments
+                </a>
+                <a href="{{ route('admin.messages.index') }}" 
+                   class="block px-3 py-2 text-gray-300 hover:text-green-400 hover:bg-gray-600 rounded-md font-medium {{ request()->routeIs('admin.messages.*') ? 'text-green-400 bg-gray-600' : '' }}">
+                    Messages
+                </a>
+                <a href="{{ route('admin.contact-info.index') }}" 
+                   class="block px-3 py-2 text-gray-300 hover:text-green-400 hover:bg-gray-600 rounded-md font-medium {{ request()->routeIs('admin.contact-info.*') ? 'text-green-400 bg-gray-600' : '' }}">
+                    Contact Info
                 </a>
                 <a href="{{ route('admin.analytics.index') }}" 
                    class="block px-3 py-2 text-gray-300 hover:text-green-400 hover:bg-gray-600 rounded-md font-medium {{ request()->routeIs('admin.analytics.*') ? 'text-green-400 bg-gray-600' : '' }}">

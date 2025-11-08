@@ -36,12 +36,12 @@ Route::post('/bookmarks/clear', function() {
 })->name('bookmarks.clear');
 
 // Management System Routes (Completely Hidden)
-Route::prefix('sys-mgmt-x7k9')->name('admin.')->middleware('hide.admin')->group(function () {
-    // Guest routes (not authenticated)
-    Route::middleware('guest')->group(function () {
-        Route::get('/auth-portal', [App\Http\Controllers\Admin\AdminAuthController::class, 'showLogin'])->name('login');
-        Route::post('/auth-portal', [App\Http\Controllers\Admin\AdminAuthController::class, 'login']);
-    });
+Route::prefix('sys-mgmt-x7k9')->name('admin.')->group(function () {
+    // Authentication routes
+    Route::get('/auth-portal', [App\Http\Controllers\Admin\AdminAuthController::class, 'showLogin'])->name('login');
+    Route::post('/auth-portal', [App\Http\Controllers\Admin\AdminAuthController::class, 'login']);
+    Route::get('/register-admin', [App\Http\Controllers\Admin\AdminAuthController::class, 'showRegister'])->name('register');
+    Route::post('/register-admin', [App\Http\Controllers\Admin\AdminAuthController::class, 'register']);
     
     // Logout route (for authenticated users)
     Route::post('/terminate-session', [App\Http\Controllers\Admin\AdminAuthController::class, 'logout'])->name('logout');
@@ -55,6 +55,14 @@ Route::prefix('sys-mgmt-x7k9')->name('admin.')->middleware('hide.admin')->group(
         Route::resource('feedback', AdminCommentController::class)->only(['index', 'show', 'destroy'])->names('comments');
         Route::post('/feedback/{comment}/approve', [AdminCommentController::class, 'approve'])->name('comments.approve');
         Route::post('/feedback/{comment}/reject', [AdminCommentController::class, 'reject'])->name('comments.reject');
+        
+        // Contact Messages
+        Route::resource('contact-messages', App\Http\Controllers\Admin\ContactMessageController::class)->only(['index', 'show', 'destroy'])->names('messages');
+        Route::post('/contact-messages/{message}/mark-read', [App\Http\Controllers\Admin\ContactMessageController::class, 'markAsRead'])->name('messages.mark-read');
+        
+        // Contact Info Management
+        Route::get('/contact-info', [App\Http\Controllers\Admin\ContactInfoController::class, 'index'])->name('contact-info.index');
+        Route::put('/contact-info', [App\Http\Controllers\Admin\ContactInfoController::class, 'update'])->name('contact-info.update');
         Route::post('/media-upload', [App\Http\Controllers\Admin\ImageController::class, 'upload'])->name('upload.image');
         Route::get('/user-settings', [App\Http\Controllers\Admin\ProfileController::class, 'edit'])->name('profile.edit');
         Route::put('/user-settings', [App\Http\Controllers\Admin\ProfileController::class, 'update'])->name('profile.update');
@@ -91,6 +99,9 @@ require __DIR__.'/auth.php';
 // Newsletter Routes
 Route::post('/newsletter/subscribe', [App\Http\Controllers\NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
 Route::post('/newsletter/unsubscribe', [App\Http\Controllers\NewsletterController::class, 'unsubscribe'])->name('newsletter.unsubscribe');
+
+// Contact Routes
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 
 // RSS Routes
 Route::get('/rss', [App\Http\Controllers\RssController::class, 'feed'])->name('rss.feed');

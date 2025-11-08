@@ -23,7 +23,7 @@
 
         <!-- Rate Limit Info -->
         <div class="mb-8 p-6 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
-            <h3 class="text-lg font-semibold text-red-800 dark:text-red-200 mb-2">⚡ Rate Limit Exceeded</h3>
+            <h3 class="text-lg font-semibold text-red-800 dark:text-red-200 mb-2"><i class="fas fa-bolt mr-2"></i>Rate Limit Exceeded</h3>
             <p class="text-sm text-red-700 dark:text-red-300 mb-4">
                 To ensure fair usage for all users, we limit the number of requests per minute. Please wait before making more requests.
             </p>

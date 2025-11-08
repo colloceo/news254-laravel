@@ -30,7 +30,22 @@ class CacheService
     public function getTrendingArticles()
     {
         return $this->getArticles('trending_articles', function() {
-            return Article::published()->orderBy('views', 'desc')->take(5)->get();
+            // First try admin-selected trending articles
+            $adminTrending = Article::published()->trending()->latest()->take(5)->get();
+            
+            // If not enough admin-selected, fill with most viewed
+            if ($adminTrending->count() < 5) {
+                $needed = 5 - $adminTrending->count();
+                $viewBased = Article::published()
+                    ->where('is_trending', false)
+                    ->orderBy('views', 'desc')
+                    ->take($needed)
+                    ->get();
+                
+                return $adminTrending->merge($viewBased);
+            }
+            
+            return $adminTrending;
         }, 30);
     }
 

@@ -63,37 +63,30 @@
             <!-- Side Featured Articles -->
             <div class="space-y-4 sm:space-y-6">
                 @foreach($featuredArticles->skip(1) as $article)
-                <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-                    <div class="flex">
-                        <div class="image-container w-24 h-20 sm:w-32 sm:h-24 flex-shrink-0 rounded">
-                            <a href="{{ route('article.show', $article->slug) }}">
+                <a href="{{ route('article.show', $article->slug) }}" class="block">
+                    <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+                        <div class="flex">
+                            <div class="image-container w-24 h-20 sm:w-32 sm:h-24 flex-shrink-0 rounded">
                                 <img src="{{ $article->featured_image }}" 
                                      alt="{{ $article->title }}"
                                      class="w-full h-full object-cover object-center hover:opacity-90 transition-opacity">
-                            </a>
-                        </div>
-                        <div class="p-3 sm:p-4 flex-1">
-                            <div class="flex items-center mb-2">
-                                <span class="text-white px-2 py-1 rounded text-xs" style="background-color: {{ $article->category->color ?? '#16A34A' }}">
-                                    {{ $article->category->name }}
-                                </span>
                             </div>
-                            <h3 class="font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2 hover:text-green-600 dark:hover:text-green-400 text-sm sm:text-base">
-                                <a href="{{ route('article.show', $article->slug) }}"
-                                   data-preview="true"
-                                   data-title="{{ $article->title }}"
-                                   data-excerpt="{{ Str::limit($article->excerpt, 120) }}"
-                                   data-author="{{ $article->author->name }}"
-                                   data-date="{{ $article->published_at->format('M j, Y') }}">
+                            <div class="p-3 sm:p-4 flex-1">
+                                <div class="flex items-center mb-2">
+                                    <span class="text-white px-2 py-1 rounded text-xs" style="background-color: {{ $article->category->color ?? '#16A34A' }}">
+                                        {{ $article->category->name }}
+                                    </span>
+                                </div>
+                                <h3 class="font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2 hover:text-green-600 dark:hover:text-green-400 text-sm sm:text-base">
                                     {{ $article->title }}
-                                </a>
-                            </h3>
-                            <div class="text-xs text-gray-500 dark:text-gray-400">
-                                {{ $article->published_at->diffForHumans() }}
+                                </h3>
+                                <div class="text-xs text-gray-500 dark:text-gray-400">
+                                    {{ $article->published_at->diffForHumans() }}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </article>
+                    </article>
+                </a>
                 @endforeach
             </div>
         </div>
@@ -121,37 +114,30 @@
                 <h2 class="text-2xl font-bold text-black dark:text-white mb-6 border-b-2 border-green-600 pb-2">Latest News</h2>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     @foreach($latestArticles as $article)
-                    <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                        <div class="relative image-container h-48">
-                            <a href="{{ route('article.show', $article->slug) }}">
+                    <a href="{{ route('article.show', $article->slug) }}" class="block">
+                        <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+                            <div class="relative image-container h-48">
                                 <img src="{{ $article->featured_image }}" 
                                      alt="{{ $article->title }}"
                                      class="w-full h-full object-cover object-center hover:opacity-90 transition-opacity">
-                            </a>
-                            <div class="absolute top-3 left-3">
-                                <span class="text-white px-2 py-1 rounded text-sm" style="background-color: {{ $article->category->color ?? '#16A34A' }}">
-                                    {{ $article->category->name }}
-                                </span>
+                                <div class="absolute top-3 left-3">
+                                    <span class="text-white px-2 py-1 rounded text-sm" style="background-color: {{ $article->category->color ?? '#16A34A' }}">
+                                        {{ $article->category->name }}
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                        <div class="p-4">
-                            <h3 class="font-semibold text-black dark:text-white mb-2 line-clamp-2 hover:text-green-600 dark:hover:text-green-400">
-                                <a href="{{ route('article.show', $article->slug) }}"
-                                   data-preview="true"
-                                   data-title="{{ $article->title }}"
-                                   data-excerpt="{{ Str::limit($article->excerpt, 120) }}"
-                                   data-author="{{ $article->author->name }}"
-                                   data-date="{{ $article->published_at->format('M j, Y') }}">
+                            <div class="p-4">
+                                <h3 class="font-semibold text-black dark:text-white mb-2 line-clamp-2 hover:text-green-600 dark:hover:text-green-400">
                                     {{ $article->title }}
-                                </a>
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">{{ $article->excerpt }}</p>
-                            <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
-                                <span>{{ $article->author->name }}</span>
-                                <span>{{ $article->published_at->diffForHumans() }}</span>
+                                </h3>
+                                <p class="text-gray-600 dark:text-gray-300 text-sm mb-3 line-clamp-2">{{ $article->excerpt }}</p>
+                                <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                                    <span>{{ $article->author->name }}</span>
+                                    <span>{{ $article->published_at->diffForHumans() }}</span>
+                                </div>
                             </div>
-                        </div>
-                    </article>
+                        </article>
+                    </a>
                     @endforeach
                 </div>
             </section>

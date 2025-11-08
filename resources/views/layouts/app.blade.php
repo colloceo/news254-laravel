@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" href="https://iili.io/FULcRiF.png">
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- PWA Meta Tags -->
     <link rel="manifest" href="/manifest.json">
@@ -135,21 +136,21 @@
                         </button>
                         <div id="more-categories-menu" class="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-lg shadow-lg border dark:border-gray-700 z-50 hidden">
                             <div class="grid grid-cols-2 gap-1 p-3">
-                                <a href="{{ route('category.show', 'health') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">🏥 Health</a>
-                                <a href="{{ route('category.show', 'education') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">📚 Education</a>
-                                <a href="{{ route('category.show', 'lifestyle') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">🌟 Lifestyle</a>
-                                <a href="{{ route('category.show', 'environment') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">🌱 Environment</a>
-                                <a href="{{ route('category.show', 'crime') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">🚔 Crime</a>
-                                <a href="{{ route('category.show', 'international') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">🌍 International</a>
-                                <a href="{{ route('category.show', 'economy') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">💰 Economy</a>
-                                <a href="{{ route('category.show', 'agriculture') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">🌾 Agriculture</a>
-                                <a href="{{ route('category.show', 'transport') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">🚗 Transport</a>
-                                <a href="{{ route('category.show', 'tourism') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">📸 Tourism</a>
-                                <a href="{{ route('category.show', 'weather') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">☁️ Weather</a>
-                                <a href="{{ route('category.show', 'opinion') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">💭 Opinion</a>
-                                <a href="{{ route('category.show', 'culture') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">🎭 Culture</a>
-                                <a href="{{ route('category.show', 'science') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">🔬 Science</a>
-                                <a href="{{ route('category.show', 'religion') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded">⛪ Religion</a>
+                                <a href="{{ route('category.show', 'health') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-heartbeat mr-2"></i>Health</a>
+                                <a href="{{ route('category.show', 'education') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-graduation-cap mr-2"></i>Education</a>
+                                <a href="{{ route('category.show', 'lifestyle') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-star mr-2"></i>Lifestyle</a>
+                                <a href="{{ route('category.show', 'environment') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-leaf mr-2"></i>Environment</a>
+                                <a href="{{ route('category.show', 'crime') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-shield-alt mr-2"></i>Crime</a>
+                                <a href="{{ route('category.show', 'international') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-globe mr-2"></i>International</a>
+                                <a href="{{ route('category.show', 'economy') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-dollar-sign mr-2"></i>Economy</a>
+                                <a href="{{ route('category.show', 'agriculture') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-seedling mr-2"></i>Agriculture</a>
+                                <a href="{{ route('category.show', 'transport') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-car mr-2"></i>Transport</a>
+                                <a href="{{ route('category.show', 'tourism') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-camera mr-2"></i>Tourism</a>
+                                <a href="{{ route('category.show', 'weather') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-cloud mr-2"></i>Weather</a>
+                                <a href="{{ route('category.show', 'opinion') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-comment mr-2"></i>Opinion</a>
+                                <a href="{{ route('category.show', 'culture') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-theater-masks mr-2"></i>Culture</a>
+                                <a href="{{ route('category.show', 'science') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-microscope mr-2"></i>Science</a>
+                                <a href="{{ route('category.show', 'religion') }}" class="px-3 py-2 text-sm text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded"><i class="fas fa-church mr-2"></i>Religion</a>
                             </div>
                         </div>
                     </div>
@@ -175,27 +176,27 @@
         </div>
         <div class="p-4 overflow-y-auto h-full">
             <nav class="space-y-2">
-                <a href="{{ route('home') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg font-medium">🏠 Home</a>
-                <a href="{{ route('category.show', 'politics') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">🏛️ Politics</a>
-                <a href="{{ route('category.show', 'business') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">💼 Business</a>
-                <a href="{{ route('category.show', 'technology') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">💻 Technology</a>
-                <a href="{{ route('category.show', 'sports') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">⚽ Sports</a>
-                <a href="{{ route('category.show', 'entertainment') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">🎬 Entertainment</a>
-                <a href="{{ route('category.show', 'health') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">🏥 Health</a>
-                <a href="{{ route('category.show', 'education') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">📚 Education</a>
-                <a href="{{ route('category.show', 'lifestyle') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">🌟 Lifestyle</a>
-                <a href="{{ route('category.show', 'environment') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">🌱 Environment</a>
-                <a href="{{ route('category.show', 'crime') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">🚔 Crime</a>
-                <a href="{{ route('category.show', 'international') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">🌍 International</a>
-                <a href="{{ route('category.show', 'economy') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">💰 Economy</a>
-                <a href="{{ route('category.show', 'agriculture') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">🌾 Agriculture</a>
-                <a href="{{ route('category.show', 'transport') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">🚗 Transport</a>
-                <a href="{{ route('category.show', 'tourism') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">📸 Tourism</a>
-                <a href="{{ route('category.show', 'weather') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">☁️ Weather</a>
-                <a href="{{ route('category.show', 'opinion') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">💭 Opinion</a>
-                <a href="{{ route('category.show', 'culture') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">🎭 Culture</a>
-                <a href="{{ route('category.show', 'science') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">🔬 Science</a>
-                <a href="{{ route('category.show', 'religion') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg">⛪ Religion</a>
+                <a href="{{ route('home') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg font-medium"><i class="fas fa-home mr-3"></i>Home</a>
+                <a href="{{ route('category.show', 'politics') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-landmark mr-3"></i>Politics</a>
+                <a href="{{ route('category.show', 'business') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-briefcase mr-3"></i>Business</a>
+                <a href="{{ route('category.show', 'technology') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-laptop mr-3"></i>Technology</a>
+                <a href="{{ route('category.show', 'sports') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-futbol mr-3"></i>Sports</a>
+                <a href="{{ route('category.show', 'entertainment') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-film mr-3"></i>Entertainment</a>
+                <a href="{{ route('category.show', 'health') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-heartbeat mr-3"></i>Health</a>
+                <a href="{{ route('category.show', 'education') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-graduation-cap mr-3"></i>Education</a>
+                <a href="{{ route('category.show', 'lifestyle') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-star mr-3"></i>Lifestyle</a>
+                <a href="{{ route('category.show', 'environment') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-leaf mr-3"></i>Environment</a>
+                <a href="{{ route('category.show', 'crime') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-shield-alt mr-3"></i>Crime</a>
+                <a href="{{ route('category.show', 'international') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-globe mr-3"></i>International</a>
+                <a href="{{ route('category.show', 'economy') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-dollar-sign mr-3"></i>Economy</a>
+                <a href="{{ route('category.show', 'agriculture') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-seedling mr-3"></i>Agriculture</a>
+                <a href="{{ route('category.show', 'transport') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-car mr-3"></i>Transport</a>
+                <a href="{{ route('category.show', 'tourism') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-camera mr-3"></i>Tourism</a>
+                <a href="{{ route('category.show', 'weather') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-cloud mr-3"></i>Weather</a>
+                <a href="{{ route('category.show', 'opinion') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-comment mr-3"></i>Opinion</a>
+                <a href="{{ route('category.show', 'culture') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-theater-masks mr-3"></i>Culture</a>
+                <a href="{{ route('category.show', 'science') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-microscope mr-3"></i>Science</a>
+                <a href="{{ route('category.show', 'religion') }}" class="block px-4 py-3 text-black dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"><i class="fas fa-church mr-3"></i>Religion</a>
             </nav>
         </div>
     </div>
@@ -249,9 +250,15 @@
                     </div>
                     <p class="text-gray-300 mb-4">Kenya's premier news platform delivering timely, relevant news.</p>
                     <div class="flex space-x-4">
-                        <a href="https://www.facebook.com/profile.php?id=61577716408403" target="_blank" class="text-gray-300 hover:text-white">Facebook</a>
-                        <a href="https://x.com/News254kenya" target="_blank" class="text-gray-300 hover:text-white">X</a>
-                        <a href="https://whatsapp.com/channel/0029VbAVMuk84Om39cyJIB1p" target="_blank" class="text-gray-300 hover:text-white">WhatsApp</a>
+                        @if($globalContactInfo->facebook_url && $globalContactInfo->facebook_url !== '#')
+                        <a href="{{ $globalContactInfo->facebook_url }}" target="_blank" class="text-gray-300 hover:text-white">Facebook</a>
+                        @endif
+                        @if($globalContactInfo->twitter_url && $globalContactInfo->twitter_url !== '#')
+                        <a href="{{ $globalContactInfo->twitter_url }}" target="_blank" class="text-gray-300 hover:text-white">X</a>
+                        @endif
+                        @if($globalContactInfo->whatsapp_url && $globalContactInfo->whatsapp_url !== '#')
+                        <a href="{{ $globalContactInfo->whatsapp_url }}" target="_blank" class="text-gray-300 hover:text-white">WhatsApp</a>
+                        @endif
                     </div>
                 </div>
                 
@@ -269,9 +276,9 @@
                 <div>
                     <h4 class="font-semibold mb-4">Contact Info</h4>
                     <div class="text-gray-300 space-y-2 text-sm">
-                        <p>Email: justintech81@gmail.com</p>
-                        <p>Phone: +254 751 153 333</p>
-                        <p>Address: Nairobi, Kenya</p>
+                        <p>Email: {{ $globalContactInfo->email }}</p>
+                        <p>Phone: {{ $globalContactInfo->phone }}</p>
+                        <p>Address: {{ $globalContactInfo->address }}</p>
                     </div>
                 </div>
             </div>

@@ -25,40 +25,38 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255|unique:categories',
             'slug' => 'required|string|max:255|unique:categories',
             'description' => 'nullable|string',
-            'color' => 'required|string|max:7',
-            'icon' => 'nullable|string|max:10'
+            'color' => 'required|string|max:7'
         ]);
 
         Category::create($request->all());
         return redirect()->route('admin.categories.index')->with('success', 'Category created successfully.');
     }
 
-    public function edit(Category $category)
+    public function edit(Category $taxonomy)
     {
-        return view('admin.categories.edit', compact('category'));
+        return view('admin.categories.edit', ['category' => $taxonomy]);
     }
 
-    public function update(Request $request, Category $category)
+    public function update(Request $request, Category $taxonomy)
     {
         $request->validate([
-            'name' => 'required|string|max:255|unique:categories,name,' . $category->id,
-            'slug' => 'required|string|max:255|unique:categories,slug,' . $category->id,
+            'name' => 'required|string|max:255|unique:categories,name,' . $taxonomy->id,
+            'slug' => 'required|string|max:255|unique:categories,slug,' . $taxonomy->id,
             'description' => 'nullable|string',
-            'color' => 'required|string|max:7',
-            'icon' => 'nullable|string|max:10'
+            'color' => 'required|string|max:7'
         ]);
 
-        $category->update($request->all());
+        $taxonomy->update($request->all());
         return redirect()->route('admin.categories.index')->with('success', 'Category updated successfully.');
     }
 
-    public function destroy(Category $category)
+    public function destroy(Category $taxonomy)
     {
-        if ($category->articles()->count() > 0) {
+        if ($taxonomy->articles()->count() > 0) {
             return redirect()->route('admin.categories.index')->with('error', 'Cannot delete category with articles.');
         }
         
-        $category->delete();
+        $taxonomy->delete();
         return redirect()->route('admin.categories.index')->with('success', 'Category deleted successfully.');
     }
 }

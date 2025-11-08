@@ -8,7 +8,7 @@
 </div>
 
 <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
-    <form action="{{ route('admin.categories.update', $category) }}" method="POST">
+    <form action="{{ route('admin.categories.update', ['taxonomy' => $category]) }}" method="POST">
         @csrf
         @method('PUT')
         
@@ -16,7 +16,7 @@
             <div>
                 <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
                 <input type="text" id="name" name="name" value="{{ old('name', $category->name) }}" required
-                       class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white dark:bg-gray-700 text-black dark:text-white">
+                       class="w-full px-3 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-black text-white">
                 @error('name')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -25,7 +25,7 @@
             <div>
                 <label for="slug" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Slug</label>
                 <input type="text" id="slug" name="slug" value="{{ old('slug', $category->slug) }}" required
-                       class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white dark:bg-gray-700 text-black dark:text-white">
+                       class="w-full px-3 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-black text-white">
                 @error('slug')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
@@ -34,17 +34,8 @@
             <div>
                 <label for="color" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Color</label>
                 <input type="color" id="color" name="color" value="{{ old('color', $category->color) }}" required
-                       class="w-full h-10 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                       class="w-full h-10 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-black">
                 @error('color')
-                <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
-                @enderror
-            </div>
-
-            <div>
-                <label for="icon" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Icon (Emoji)</label>
-                <input type="text" id="icon" name="icon" value="{{ old('icon', $category->icon) }}" maxlength="10"
-                       class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white dark:bg-gray-700 text-black dark:text-white">
-                @error('icon')
                 <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
                 @enderror
             </div>
@@ -53,7 +44,7 @@
         <div class="mt-6">
             <label for="description" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Description</label>
             <textarea id="description" name="description" rows="3"
-                      class="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-white dark:bg-gray-700 text-black dark:text-white">{{ old('description', $category->description) }}</textarea>
+                      class="w-full px-3 py-2 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 bg-black text-white">{{ old('description', $category->description) }}</textarea>
             @error('description')
             <p class="text-red-500 text-sm mt-1">{{ $message }}</p>
             @enderror

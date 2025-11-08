@@ -24,7 +24,7 @@
 
         <!-- Maintenance Info -->
         <div class="mb-8 p-6 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-            <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-2">🔧 Scheduled Maintenance</h3>
+            <h3 class="text-lg font-semibold text-blue-800 dark:text-blue-200 mb-2"><i class="fas fa-wrench mr-2"></i>Scheduled Maintenance</h3>
             <p class="text-sm text-blue-700 dark:text-blue-300 mb-4">
                 We're performing routine maintenance to improve your experience. This should only take a few minutes.
             </p>

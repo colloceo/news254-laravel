@@ -229,6 +229,42 @@
     }
 }
 
+/* Admin panel black theme */
+.admin-form {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+}
+
+.admin-form input,
+.admin-form textarea,
+.admin-form select {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-color: #4b5563 !important;
+}
+
+.admin-table {
+    background-color: #000000 !important;
+}
+
+.admin-table th,
+.admin-table td {
+    color: #ffffff !important;
+    border-color: #4b5563 !important;
+}
+
+.admin-table thead {
+    background-color: #000000 !important;
+}
+
+.admin-table tbody {
+    background-color: #000000 !important;
+}
+
+.admin-table tr:hover {
+    background-color: #1f2937 !important;
+}
+
 /* Mobile optimizations */
 @media (max-width: 640px) {
     .container {

@@ -61,16 +61,16 @@
             <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-4">Popular Sections</h3>
             <div class="grid grid-cols-2 gap-4 text-sm">
                 <a href="{{ route('category.show', 'politics') }}" class="text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300">
-                    🏛️ Politics
+                    <i class="fas fa-landmark mr-2"></i>Politics
                 </a>
                 <a href="{{ route('category.show', 'business') }}" class="text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300">
-                    💼 Business
+                    <i class="fas fa-briefcase mr-2"></i>Business
                 </a>
                 <a href="{{ route('category.show', 'technology') }}" class="text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300">
-                    💻 Technology
+                    <i class="fas fa-laptop mr-2"></i>Technology
                 </a>
                 <a href="{{ route('category.show', 'sports') }}" class="text-green-600 hover:text-green-700 dark:text-green-400 dark:hover:text-green-300">
-                    ⚽ Sports
+                    <i class="fas fa-futbol mr-2"></i>Sports
                 </a>
             </div>
         </div>
