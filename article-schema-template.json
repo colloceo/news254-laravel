@@ -1,0 +1,86 @@
+{
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "{{ $article->title }}",
+    "alternativeHeadline": "{{ $article->excerpt }}",
+    "description": "{{ $article->excerpt }}",
+    "image": {
+        "@type": "ImageObject",
+        "url": "{{ $article->featured_image }}",
+        "width": 1200,
+        "height": 630,
+        "caption": "{{ $article->title }}"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "{{ $article->author->name }}",
+        "url": "https://news254.co.ke/author/{{ $article->author->slug }}",
+        "image": "{{ $article->author->avatar }}",
+        "jobTitle": "{{ $article->author->title ?? 'Journalist' }}",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "News254"
+        }
+    },
+    "publisher": {
+        "@type": "NewsMediaOrganization",
+        "name": "News254",
+        "url": "https://news254.co.ke",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://iili.io/FULcRiF.png",
+            "width": 200,
+            "height": 200
+        }
+    },
+    "datePublished": "{{ $article->published_at->toISOString() }}",
+    "dateModified": "{{ $article->updated_at->toISOString() }}",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "{{ route('article.show', $article->slug) }}"
+    },
+    "url": "{{ route('article.show', $article->slug) }}",
+    "articleSection": "{{ $article->category->name }}",
+    "keywords": "{{ $article->tags ?? 'Kenya news, ' . $article->category->name . ', breaking news Kenya' }}",
+    "wordCount": "{{ str_word_count(strip_tags($article->content)) }}",
+    "inLanguage": "en-KE",
+    "isAccessibleForFree": true,
+    "hasPart": {
+        "@type": "WebPageElement",
+        "@id": "{{ route('article.show', $article->slug) }}#article-body",
+        "isAccessibleForFree": true,
+        "cssSelector": ".article-content"
+    },
+    "locationCreated": {
+        "@type": "Place",
+        "name": "Nairobi, Kenya",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "KE",
+            "addressLocality": "Nairobi"
+        }
+    },
+    "about": [
+        {
+            "@type": "Thing",
+            "name": "{{ $article->category->name }}",
+            "sameAs": "{{ route('category.show', $article->category->slug) }}"
+        },
+        {
+            "@type": "Place",
+            "name": "Kenya",
+            "sameAs": "https://en.wikipedia.org/wiki/Kenya"
+        }
+    ],
+    "mentions": [
+        {
+            "@type": "Place",
+            "name": "Kenya",
+            "sameAs": "https://en.wikipedia.org/wiki/Kenya"
+        }
+    ],
+    "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".article-headline", ".article-summary"]
+    }
+}

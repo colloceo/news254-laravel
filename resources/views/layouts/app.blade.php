@@ -5,12 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>@yield('title', 'News254 - Kenya\'s Premier News Platform')</title>
-    <meta name="description" content="@yield('description', 'Latest breaking news from Kenya. Politics, business, technology, sports, entertainment.')">
+    <!-- SEO Meta Tags -->
+    <title>@yield('title', 'News254 - Latest Kenya News | Breaking News, Politics, Business & Sports')</title>
+    <meta name="description" content="@yield('description', 'Kenya\'s leading news platform delivering breaking news, politics, business, sports, entertainment and technology updates. Stay informed with News254.co.ke')">
+    <meta name="keywords" content="@yield('keywords', 'Kenya news, breaking news Kenya, Nairobi news, Kenya politics, Kenya business, East Africa news, Kenyan headlines')">
+    <meta name="author" content="News254">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE">
     
-    <link rel="icon" type="image/png" href="https://iili.io/FULcRiF.png">
+    <!-- Canonical URL -->
+    <link rel="canonical" href="@yield('canonical', url()->current())">
+    
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="en-ke" href="{{ url()->current() }}">
+    <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="@yield('og_type', 'website')">
+    <meta property="og:title" content="@yield('og_title', 'News254 - Kenya\'s Premier News Platform')">
+    <meta property="og:description" content="@yield('og_description', 'Latest breaking news from Kenya. Politics, business, technology, sports, entertainment.')">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:site_name" content="News254">
+    <meta property="og:image" content="@yield('og_image', 'https://news254.co.ke/images/news254-og-image.jpg')">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="en_KE">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@News254kenya">
+    <meta name="twitter:creator" content="@News254kenya">
+    <meta name="twitter:title" content="@yield('twitter_title', 'News254 - Kenya\'s Premier News Platform')">
+    <meta name="twitter:description" content="@yield('twitter_description', 'Latest breaking news from Kenya. Politics, business, technology, sports, entertainment.')">
+    <meta name="twitter:image" content="@yield('twitter_image', 'https://news254.co.ke/images/news254-twitter-image.jpg')">
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://iili.io/FULcRiF.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://iili.io/FULcRiF.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://iili.io/FULcRiF.png">
+    
+    <!-- RSS Feeds -->
+    <link rel="alternate" type="application/rss+xml" title="News254 RSS Feed" href="{{ route('rss.main') }}">
+    
+    <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <!-- Fonts and Styles -->
+    <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- PWA Meta Tags -->
@@ -20,9 +63,57 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="apple-mobile-web-app-title" content="News254">
-    <link rel="apple-touch-icon" href="https://iili.io/FULcRiF.png">
+    
+    <!-- JSON-LD Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NewsMediaOrganization",
+        "name": "News254",
+        "url": "https://news254.co.ke",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://iili.io/FULcRiF.png",
+            "width": 200,
+            "height": 200
+        },
+        "sameAs": [
+            "https://www.facebook.com/profile.php?id=61577716408403",
+            "https://x.com/News254kenya",
+            "https://whatsapp.com/channel/0029VbAVMuk84Om39cyJIB1p"
+        ],
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "KE",
+            "addressLocality": "Nairobi"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+254751153333",
+            "contactType": "customer service",
+            "email": "justintech81@gmail.com"
+        },
+        "description": "Kenya's premier digital news platform delivering breaking news, politics, business, sports, entertainment and technology updates.",
+        "foundingDate": "2024",
+        "areaServed": {
+            "@type": "Country",
+            "name": "Kenya"
+        }
+    }
+    </script>
+    
+    @yield('schema')
     
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+    </script>
     
     <style>
         img { max-width: 100%; height: auto; }

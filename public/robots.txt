@@ -1,14 +1,59 @@
+# News254.co.ke Robots.txt - Kenya's Premier News Platform
+
+# Allow all search engines
 User-agent: *
 Allow: /
 
-# Block admin routes
+# Block admin and private routes
 Disallow: /sys-mgmt-x7k9/
 Disallow: /admin/
 Disallow: /dashboard/
+Disallow: /login
+Disallow: /register
+Disallow: /profile/
+Disallow: /bookmarks/
+Disallow: /api/
 
-# Allow main content
-Allow: /articles/
-Allow: /categories/
+# Allow important content
+Allow: /article/
+Allow: /category/
 Allow: /search
+Allow: /rss
+Allow: /about
+Allow: /contact
 
+# Google News Bot
+User-agent: Googlebot-News
+Allow: /
+Allow: /article/
+Allow: /category/
+Crawl-delay: 1
+
+# Bing Bot
+User-agent: bingbot
+Allow: /
+Crawl-delay: 2
+
+# Facebook Bot
+User-agent: facebookexternalhit
+Allow: /
+
+# Twitter Bot
+User-agent: Twitterbot
+Allow: /
+
+# WhatsApp Bot
+User-agent: WhatsApp
+Allow: /
+
+# Sitemaps
 Sitemap: https://news254.co.ke/sitemap.xml
+Sitemap: https://news254.co.ke/sitemap-main.xml
+Sitemap: https://news254.co.ke/sitemap-articles.xml
+Sitemap: https://news254.co.ke/rss
+
+# Crawl delay for all bots
+Crawl-delay: 1
+
+# Host directive
+Host: https://news254.co.ke
