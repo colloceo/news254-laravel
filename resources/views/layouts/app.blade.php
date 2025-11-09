@@ -269,7 +269,6 @@
                         <li><a href="{{ route('contact') }}" class="hover:text-white">Contact</a></li>
                         <li><a href="{{ route('privacy') }}" class="hover:text-white">Privacy Policy</a></li>
                         <li><a href="{{ route('terms') }}" class="hover:text-white">Terms</a></li>
-                        <li><a href="{{ route('bookmarks.index') }}" class="hover:text-white">My Bookmarks</a></li>
                     </ul>
                 </div>
                 

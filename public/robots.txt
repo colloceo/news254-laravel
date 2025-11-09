@@ -1,2 +1,14 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Block admin routes
+Disallow: /sys-mgmt-x7k9/
+Disallow: /admin/
+Disallow: /dashboard/
+
+# Allow main content
+Allow: /articles/
+Allow: /categories/
+Allow: /search
+
+Sitemap: https://news254.co.ke/sitemap.xml
