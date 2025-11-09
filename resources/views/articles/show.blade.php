@@ -125,15 +125,7 @@
                             </div>
                         </div>
                         
-                        <!-- Bookmark Button -->
-                        <button onclick="toggleBookmark({{ $article->id }}, this)" 
-                                class="bookmark-btn flex items-center space-x-2 px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-700 transition-colors"
-                                title="Bookmark this article">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z"></path>
-                            </svg>
-                            <span class="text-sm text-gray-600 dark:text-gray-300">Save</span>
-                        </button>
+
                     </div>
 
                     <!-- Article Content -->
@@ -446,60 +438,6 @@ document.getElementById('comment-form').addEventListener('submit', function(e) {
     });
 });
 
-// Bookmark functionality
-function toggleBookmark(articleId, button) {
-    fetch('/bookmarks/toggle', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
-        },
-        body: JSON.stringify({ article_id: articleId })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.success) {
-            const svg = button.querySelector('svg');
-            const text = button.querySelector('span');
-            
-            if (data.bookmarked) {
-                svg.setAttribute('fill', 'currentColor');
-                svg.classList.add('text-red-500');
-                text.textContent = 'Saved';
-                button.title = 'Remove from bookmarks';
-                button.classList.add('bookmarked');
-            } else {
-                svg.setAttribute('fill', 'none');
-                svg.classList.remove('text-red-500');
-                text.textContent = 'Save';
-                button.title = 'Bookmark this article';
-                button.classList.remove('bookmarked');
-            }
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
 
-// Check if article is bookmarked on page load
-document.addEventListener('DOMContentLoaded', function() {
-    const bookmarkBtn = document.querySelector('.bookmark-btn');
-    if (bookmarkBtn) {
-        const articleId = {{ $article->id }};
-        
-        const bookmarks = JSON.parse(localStorage.getItem('bookmarks') || '[]');
-        if (bookmarks.includes(articleId.toString())) {
-            const svg = bookmarkBtn.querySelector('svg');
-            const text = bookmarkBtn.querySelector('span');
-            
-            svg.setAttribute('fill', 'currentColor');
-            svg.classList.add('text-red-500');
-            text.textContent = 'Saved';
-            bookmarkBtn.title = 'Remove from bookmarks';
-            bookmarkBtn.classList.add('bookmarked');
-        }
-    }
-});
 </script>
 @endpush

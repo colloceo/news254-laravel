@@ -64,7 +64,7 @@
                 </div>
                 <div class="flex items-start space-x-2">
                     <span class="text-green-600 font-bold">•</span>
-                    <span>Use bookmarks instead of repeated searches</span>
+                    <span>Use browser favorites for frequently visited pages</span>
                 </div>
             </div>
         </div>

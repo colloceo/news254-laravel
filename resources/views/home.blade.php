@@ -4,15 +4,30 @@
 @section('description', 'Stay informed with News254 - Kenya\'s leading source for politics, business, technology, sports, and entertainment news.')
 
 @section('content')
-<div class="container mx-auto px-4 py-4 sm:py-8">
-    <!-- Hero Section -->
-    @if($featuredArticles->count() > 0)
+<!-- Breaking News Bar -->
+@if(isset($breakingNews) && $breakingNews)
+<div class="bg-red-600 text-white py-2 px-4 mb-6 rounded-lg flex items-center breaking-pulse">
+    <span class="font-bold mr-3 flex items-center">
+        <i class="fas fa-bolt mr-1"></i> BREAKING:
+    </span>
+    <div class="overflow-hidden">
+        <div class="animate-marquee whitespace-nowrap">
+            <a href="{{ route('article.show', $breakingNews->slug) }}" class="hover:underline mr-8">
+                {{ $breakingNews->title }}
+            </a>
+        </div>
+    </div>
+</div>
+@endif
+
+<!-- Hero Section -->
+@if($featuredArticles->count() > 0)
     <section class="mb-8 sm:mb-12">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8">
             <!-- Main Featured Article -->
             <div class="lg:col-span-1">
                 @php $mainArticle = $featuredArticles->first() @endphp
-                <article class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+                <article class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden article-card">
                     <div class="relative image-container h-48 sm:h-64">
                         <a href="{{ route('article.show', $mainArticle->slug) }}">
                             <img src="{{ $mainArticle->featured_image }}" 
@@ -26,7 +41,7 @@
                         </div>
                         @if($mainArticle->is_breaking)
                         <div class="absolute top-2 right-2 sm:top-4 sm:right-4">
-                            <span class="bg-red-600 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold animate-pulse">
+                            <span class="bg-red-600 text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs sm:text-sm font-bold breaking-pulse">
                                 BREAKING
                             </span>
                         </div>
@@ -64,7 +79,7 @@
             <div class="space-y-4 sm:space-y-6">
                 @foreach($featuredArticles->skip(1) as $article)
                 <a href="{{ route('article.show', $article->slug) }}" class="block">
-                    <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+                    <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all article-card">
                         <div class="flex">
                             <div class="image-container w-24 h-20 sm:w-32 sm:h-24 flex-shrink-0 rounded">
                                 <img src="{{ $article->featured_image }}" 
@@ -93,18 +108,15 @@
     </section>
     @endif
 
-    <!-- Ad Banner -->
-    <div class="mb-8">
-        <div class="bg-gray-100 h-24 flex items-center justify-center text-gray-500 rounded-lg">
-            <!-- Google AdSense Banner Ad -->
-            <ins class="adsbygoogle"
-                 style="display:block"
-                 data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
-                 data-ad-slot="XXXXXXXXXX"
-                 data-ad-format="auto"
-                 data-full-width-responsive="true"></ins>
+<!-- Ad Banner -->
+<div class="mb-8">
+    <div class="bg-gray-100 dark:bg-gray-800 h-24 flex items-center justify-center text-gray-500 rounded-lg">
+        <div class="text-center">
+            <p class="text-sm">Advertisement</p>
+            <p class="text-xs mt-1">Your ad could be here</p>
         </div>
     </div>
+</div>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <!-- Main Content -->
@@ -115,7 +127,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     @foreach($latestArticles as $article)
                     <a href="{{ route('article.show', $article->slug) }}" class="block">
-                        <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow cursor-pointer">
+                        <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-all article-card">
                             <div class="relative image-container h-48">
                                 <img src="{{ $article->featured_image }}" 
                                      alt="{{ $article->title }}"
@@ -212,14 +224,11 @@
             </section>
 
             <!-- Sidebar Ad -->
-            <div class="bg-gray-100 h-64 flex items-center justify-center text-gray-500 rounded-lg">
-                <!-- Google AdSense Sidebar Ad -->
-                <ins class="adsbygoogle"
-                     style="display:block"
-                     data-ad-client="ca-pub-XXXXXXXXXXXXXXXXX"
-                     data-ad-slot="XXXXXXXXXX"
-                     data-ad-format="auto"
-                     data-full-width-responsive="true"></ins>
+            <div class="bg-gray-100 dark:bg-gray-800 h-64 flex items-center justify-center text-gray-500 rounded-lg">
+                <div class="text-center">
+                    <p class="text-sm">Advertisement</p>
+                    <p class="text-xs mt-1">Your ad could be here</p>
+                </div>
             </div>
         </div>
     </div>

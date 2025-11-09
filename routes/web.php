@@ -27,13 +27,7 @@ Route::post('/article/{slug}/comment', [ArticleController::class, 'storeComment'
 // Category Routes
 Route::get('/category/{slug}', [CategoryController::class, 'show'])->name('category.show');
 
-// Bookmark Routes
-Route::post('/bookmarks/toggle', [App\Http\Controllers\BookmarkController::class, 'toggle'])->name('bookmarks.toggle');
-Route::get('/bookmarks', [App\Http\Controllers\BookmarkController::class, 'index'])->name('bookmarks.index');
-Route::post('/bookmarks/clear', function() {
-    session()->forget('bookmarks');
-    return response()->json(['success' => true]);
-})->name('bookmarks.clear');
+
 
 // Management System Routes (Completely Hidden)
 Route::prefix('sys-mgmt-x7k9')->name('admin.')->group(function () {

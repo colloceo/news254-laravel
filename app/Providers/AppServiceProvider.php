@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\ContactInfo;
+use App\Models\Category;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -23,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
     {
         View::composer('*', function ($view) {
             $view->with('globalContactInfo', ContactInfo::getContactInfo());
+            $view->with('globalCategories', Category::orderBy('name')->get());
         });
     }
 }
