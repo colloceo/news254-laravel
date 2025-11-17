@@ -1,4 +1,4 @@
-# News254 Laravel - Kenya's Premier News Platform
+# News254 Laravel- Kenya's Premier News Platform
 
 ![News254 Logo](https://iili.io/FULcRiF.png)
 
