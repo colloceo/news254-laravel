@@ -1,7 +1,5 @@
 # News254 Laravel- Kenya's Premier News Platform
 
-![News254 Logo](https://iili.io/FULcRiF.png)
-
 A modern, responsive news blog website built with Laravel, designed specifically for Kenyan audiences, featuring local, political, technology, business, and entertainment news coverage.
 
 ## <i class="fas fa-star"></i> Live Demo
